@@ -7,7 +7,7 @@ Epoch:		0
 License:	GPL/LGPL
 Group:		Applications/Communications
 # Source0-md5:	ca870acf255dd240a02d387485940c3c
-Source0:	http://osdn.dl.sourceforge.net/gtkpod/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/gtkpod/%{name}-%{version}.tar.gz
 Source1:	gtkpod.desktop
 URL:		http://gtkpod.sourceforge.net
 BuildRequires:	autoconf
