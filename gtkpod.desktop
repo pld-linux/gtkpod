@@ -2,7 +2,7 @@
 Encoding=UTF-8
 Name=GtkPod
 Comment=Graphical song management program for Apple's iPod
-Comment[pl]=Graficzny menad¿er utworów muzycznych dla urz±dzeñ Apple iPod
+Comment[pl]=Graficzny menadÅ¼er utworÃ³w muzycznych dla urzÄ…dzeÅ„ Apple iPod
 Exec=gtkpod
 Terminal=false
 Type=Application
