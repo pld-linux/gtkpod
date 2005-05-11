@@ -1,15 +1,15 @@
 Summary:	Graphical song management program for Apple's iPod
 Summary(pl):	Graficzny menad¿er utworów muzycznych dla urz±dzeñ Apple iPod
 Name:		gtkpod
-Version:	0.85.0
+Version:	0.88.2
 Release:	1
 Epoch:		0
 License:	GPL/LGPL
 Group:		Applications/Communications
-# Source0-md5:	ca870acf255dd240a02d387485940c3c
 Source0:	http://dl.sourceforge.net/gtkpod/%{name}-%{version}.tar.gz
-Source1:	gtkpod.desktop
-URL:		http://gtkpod.sourceforge.net
+# Source0-md5:	12f492d215ee4c7fb55c491f7267deb1
+Source1:	%{name}.desktop
+URL:		http://gtkpod.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.7
 BuildRequires:	flex
@@ -59,7 +59,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README TODOandBUGS.txt
+%doc AUTHORS ChangeLog README TODOandBUGS.txt
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
 %{_desktopdir}/gtkpod.desktop
