@@ -9,3 +9,4 @@ Type=Application
 Icon=gtkpod.png
 Categories=GTK;Utility;Audio;
 StartupNotify=false
+# vi: encoding=utf-8
