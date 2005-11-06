@@ -15,6 +15,7 @@ BuildRequires:	automake >= 1:1.7
 BuildRequires:	flex
 BuildRequires:	gettext-devel >= 0.11.0
 BuildRequires:	gtk+2-devel >= 2.4.0
+BuildRequires:	libglade2-devel
 BuildRequires:	libid3tag-devel >= 0.15
 BuildRequires:	mpeg4ip-devel
 BuildRequires:	pkgconfig
