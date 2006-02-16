@@ -19,6 +19,7 @@ BuildRequires:	libglade2-devel
 BuildRequires:	libid3tag-devel >= 0.15
 BuildRequires:	mpeg4ip-devel
 BuildRequires:	pkgconfig
+BuildRequires:	sed >= 4.0
 Requires:	mount
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -32,9 +33,9 @@ urz±dzeñ Apple iPod. Pozwala wgrywaæ pliki i listy utworów do iPoda.
 
 %prep
 %setup -q
+sed -ie 's!/usr/bin/awk!/bin/awk!g' scripts/ldif2vcf.sh
 
 %build
-sed -ie 's!/usr/bin/awk!/bin/awk!g' scripts/ldif2vcf.sh
 %{__aclocal}
 %{__autoconf}
 %{__autoheader}
