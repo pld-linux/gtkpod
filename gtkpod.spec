@@ -20,6 +20,7 @@ BuildRequires:	libid3tag-devel >= 0.15
 BuildRequires:	mpeg4ip-devel
 BuildRequires:	pkgconfig
 BuildRequires:	sed >= 4.0
+BuildRequires:	libgpod
 Requires:	mount
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
