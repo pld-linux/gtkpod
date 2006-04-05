@@ -10,17 +10,17 @@ Source0:	http://dl.sourceforge.net/gtkpod/%{name}-%{version}.tar.gz
 # Source0-md5:	73c2767100a64ac9a2ba488909bc8b3b
 Source1:	%{name}.desktop
 URL:		http://gtkpod.sourceforge.net/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.55
 BuildRequires:	automake >= 1:1.7
 BuildRequires:	flex
 BuildRequires:	gettext-devel >= 0.11.0
-BuildRequires:	gtk+2-devel >= 2.4.0
-BuildRequires:	libglade2-devel
+BuildRequires:	gtk+2-devel >= 2:2.4.0
+BuildRequires:	libglade2-devel >= 2.4.0
+BuildRequires:	libgpod-devel >= 0.3.0
 BuildRequires:	libid3tag-devel >= 0.15
 BuildRequires:	mpeg4ip-devel
 BuildRequires:	pkgconfig
 BuildRequires:	sed >= 4.0
-BuildRequires:	libgpod
 Requires:	mount
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
