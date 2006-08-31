@@ -22,6 +22,7 @@ BuildRequires:	libgpod-devel <= 0.3.2
 BuildRequires:	libid3tag-devel >= 0.15
 BuildRequires:	mpeg4ip-devel
 BuildRequires:	pkgconfig
+BuildRequires:	rpm-pythonprov
 BuildRequires:	sed >= 4.0
 Requires:	mount
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
