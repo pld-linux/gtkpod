@@ -1,6 +1,6 @@
 %define		_snap	20060804
 Summary:	Graphical song management program for Apple's iPod
-Summary(pl):	Graficzny menad¿er utworów muzycznych dla urz±dzeñ Apple iPod
+Summary(pl.UTF-8):   Graficzny menadÅ¼er utworÃ³w muzycznych dla urzÄ…dzeÅ„ Apple iPod
 Name:		gtkpod
 Version:	0.99.8
 Release:	2
@@ -31,9 +31,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Platform independent graphical song management program for Apple's
 iPod. It allows you to upload songs and playlists to your iPod.
 
-%description -l pl
-Niezale¿ne od platformy graficzny menad¿er utworów muzycznych dla
-urz±dzeñ Apple iPod. Pozwala wgrywaæ pliki i listy utworów do iPoda.
+%description -l pl.UTF-8
+NiezaleÅ¼ne od platformy graficzny menadÅ¼er utworÃ³w muzycznych dla
+urzÄ…dzeÅ„ Apple iPod. Pozwala wgrywaÄ‡ pliki i listy utworÃ³w do iPoda.
 
 %prep
 %setup -q
