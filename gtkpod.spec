@@ -1,6 +1,6 @@
 %define		_snap	20060804
 Summary:	Graphical song management program for Apple's iPod
-Summary(pl.UTF-8):   Graficzny menadżer utworów muzycznych dla urządzeń Apple iPod
+Summary(pl.UTF-8):	Graficzny menadżer utworów muzycznych dla urządzeń Apple iPod
 Name:		gtkpod
 Version:	0.99.8
 Release:	2
