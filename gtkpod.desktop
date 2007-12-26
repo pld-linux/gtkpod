@@ -1,12 +1,11 @@
 [Desktop Entry]
-Encoding=UTF-8
 Name=GtkPod
 Comment=Graphical song management program for Apple's iPod
 Comment[pl]=Graficzny menadżer utworów muzycznych dla urządzeń Apple iPod
 Exec=gtkpod
 Terminal=false
 Type=Application
-Icon=gtkpod.png
+Icon=gtkpod
 Categories=GTK;Utility;Audio;
 StartupNotify=false
 # vi: encoding=utf-8
