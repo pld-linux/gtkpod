@@ -2,13 +2,13 @@
 Summary:	Graphical song management program for Apple's iPod
 Summary(pl.UTF-8):	Graficzny menadżer utworów muzycznych dla urządzeń Apple iPod
 Name:		gtkpod
-Version:	0.99.8
-Release:	2
+Version:	0.99.12
+Release:	1
 Epoch:		0
 License:	GPL/LGPL
 Group:		Applications/Communications
 Source0:	http://dl.sourceforge.net/gtkpod/%{name}-%{version}.tar.gz
-# Source0-md5:	f04b67605204d9076d30d83b72b78463
+# Source0-md5:	13162a7e9912028922aafcf81d908394
 Source1:	%{name}.desktop
 Patch0:		%{name}-unk208.patch
 URL:		http://gtkpod.sourceforge.net/
@@ -21,6 +21,7 @@ BuildRequires:	libglade2-devel >= 2.4.0
 BuildRequires:	libgpod-devel >= 0.4.0
 BuildRequires:	libid3tag-devel >= 0.15
 BuildRequires:	mpeg4ip-devel
+BuildRequires:	perl-XML-Parser
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-pythonprov
 BuildRequires:	sed >= 4.0
@@ -41,10 +42,6 @@ urządzeń Apple iPod. Pozwala wgrywać pliki i listy utworów do iPoda.
 sed -ie 's!/usr/bin/awk!/bin/awk!g' scripts/ldif2vcf.sh
 
 %build
-%{__aclocal}
-%{__autoconf}
-%{__autoheader}
-%{__automake}
 %configure
 %{__make}
 
@@ -58,7 +55,7 @@ install -d $RPM_BUILD_ROOT%{_desktopdir}
 cp %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}/gtkpod.desktop
 
 install -d $RPM_BUILD_ROOT%{_pixmapsdir}
-cp pixmaps/gtkpod-icon-32x32.png $RPM_BUILD_ROOT%{_pixmapsdir}/gtkpod.png
+cp data/icons/32x32/gtkpod.png $RPM_BUILD_ROOT%{_pixmapsdir}/gtkpod.png
 
 %find_lang %{name} --all-name
 
