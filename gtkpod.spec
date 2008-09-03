@@ -12,8 +12,6 @@ Source0:	http://dl.sourceforge.net/gtkpod/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
 Patch0:		%{name}-unk208.patch
 URL:		http://gtkpod.sourceforge.net/
-BuildRequires:	autoconf >= 2.55
-BuildRequires:	automake >= 1:1.7
 BuildRequires:	flex
 BuildRequires:	gettext-devel >= 0.11.0
 BuildRequires:	gtk+2-devel >= 2:2.4.0
