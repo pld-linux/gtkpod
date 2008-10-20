@@ -16,6 +16,7 @@ BuildRequires:	flex
 BuildRequires:	gettext-devel >= 0.11.0
 BuildRequires:	gtk+2-devel >= 2:2.4.0
 BuildRequires:	libglade2-devel >= 1:2.4.0
+BuildRequires:	libgnomecanvas-devel
 BuildRequires:	libgpod-devel >= 0.4.0
 BuildRequires:	libid3tag-devel >= 0.15
 BuildRequires:	mpeg4ip-devel
