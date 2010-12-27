@@ -1,0 +1,15 @@
+the pl comment should go to .po file really
+
+--- gtkpod-1.0.0/data/gtkpod.desktop.in~	2010-08-01 17:02:42.000000000 +0300
++++ gtkpod-1.0.0/data/gtkpod.desktop.in	2010-12-28 01:17:41.542790127 +0200
+@@ -2,8 +2,9 @@
+ _Name=gtkpod iPod Manager
+ _GenericName=iPod Manager
+ _Comment=Manage music and video on an Apple iPod
++Comment[pl]=Graficzny menadżer utworów muzycznych dla urządzeń Apple iPod
+ Exec=gtkpod
+ Icon=gtkpod
+ Terminal=false
+ Type=Application
+-Categories=GTK;AudioVideo;
++Categories=GTK;Utility;Audio;

@@ -1,16 +1,14 @@
-%define		_snap	20060804
 Summary:	Graphical song management program for Apple's iPod
 Summary(pl.UTF-8):	Graficzny menadżer utworów muzycznych dla urządzeń Apple iPod
 Name:		gtkpod
-Version:	0.99.14
+Version:	1.0.0
 Release:	1
-Epoch:		0
 License:	GPL/LGPL
 Group:		Applications/Communications
-Source0:	http://dl.sourceforge.net/gtkpod/%{name}-%{version}.tar.gz
-# Source0-md5:	f7948eceb955b302f4c47da4c0e1ec12
-Source1:	%{name}.desktop
+Source0:	http://downloads.sourceforge.net/gtkpod/%{name}-%{version}.tar.gz
+# Source0-md5:	cadd402dcd1cfbedda0357bf24965a7c
 Patch0:		%{name}-unk208.patch
+Patch1:		desktop.patch
 URL:		http://gtkpod.sourceforge.net/
 BuildRequires:	flex
 BuildRequires:	gettext-devel >= 0.11.0
@@ -23,7 +21,9 @@ BuildRequires:	mpeg4ip-devel
 BuildRequires:	perl-XML-Parser
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-pythonprov
+BuildRequires:	rpmbuild(macros) >= 1.596
 BuildRequires:	sed >= 4.0
+Requires:	hicolor-icon-theme
 Requires:	mount
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -38,6 +38,7 @@ urządzeń Apple iPod. Pozwala wgrywać pliki i listy utworów do iPoda.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 sed -ie 's!/usr/bin/awk!/bin/awk!g' scripts/ldif2vcf.sh
 
 %build
@@ -46,25 +47,27 @@ sed -ie 's!/usr/bin/awk!/bin/awk!g' scripts/ldif2vcf.sh
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT%{_desktopdir}
-cp %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}/gtkpod.desktop
-
-install -d $RPM_BUILD_ROOT%{_pixmapsdir}
-cp data/icons/32x32/gtkpod.png $RPM_BUILD_ROOT%{_pixmapsdir}/gtkpod.png
+rm -f $RPM_BUILD_ROOT%{_datadir}/icons/hicolor/scalable/apps/gtkpod.svg
 
 %find_lang %{name} --all-name
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+%update_icon_cache hicolor
+
+%postun
+%update_icon_cache hicolor
+
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README TODOandBUGS.txt
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/%{name}
+%{_mandir}/man1/%{name}.1*
 %{_datadir}/%{name}
-%{_desktopdir}/gtkpod.desktop
-%{_pixmapsdir}/gtkpod.png
+%{_desktopdir}/%{name}.desktop
+%{_iconsdir}/hicolor/*/apps/%{name}.png
