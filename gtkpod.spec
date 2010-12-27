@@ -4,7 +4,7 @@ Name:		gtkpod
 Version:	1.0.0
 Release:	1
 License:	GPL/LGPL
-Group:		Applications/Communications
+Group:		X11/Applications/Multimedia
 Source0:	http://downloads.sourceforge.net/gtkpod/%{name}-%{version}.tar.gz
 # Source0-md5:	cadd402dcd1cfbedda0357bf24965a7c
 Patch0:		%{name}-unk208.patch
