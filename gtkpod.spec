@@ -13,6 +13,7 @@ URL:		http://gtkpod.sourceforge.net/
 BuildRequires:	flex
 BuildRequires:	gettext-devel >= 0.11.0
 BuildRequires:	gtk+2-devel >= 2:2.4.0
+BuildRequires:	intltool
 BuildRequires:	libglade2-devel >= 1:2.4.0
 BuildRequires:	libgnomecanvas-devel
 BuildRequires:	libgpod-devel >= 0.4.0
