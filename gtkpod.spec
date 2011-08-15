@@ -1,8 +1,10 @@
+# TODO
+# - Check for MP4 Headers: mp4v2/mp4v2.h: mp4v2-devel
 Summary:	Graphical song management program for Apple's iPod
 Summary(pl.UTF-8):	Graficzny menadżer utworów muzycznych dla urządzeń Apple iPod
 Name:		gtkpod
 Version:	2.1.0
-Release:	1
+Release:	2
 License:	GPL/LGPL
 Group:		X11/Applications/Multimedia
 Source0:	http://downloads.sourceforge.net/gtkpod/%{name}-%{version}.tar.gz
@@ -28,8 +30,10 @@ BuildRequires:	rpmbuild(macros) >= 1.596
 BuildRequires:	sed >= 4.0
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	hicolor-icon-theme
-Requires(post,postun):	glib2 >= 1:2.26.0
+Requires(post,postun):	/sbin/ldconfig
+# M4A -> MP3 conversion support
 Requires:	mount
+Suggests:	faad2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -47,6 +51,7 @@ urządzeń Apple iPod. Pozwala wgrywać pliki i listy utworów do iPoda.
 
 %build
 %configure \
+	FAAD=yes \
 	--disable-static
 %{__make}
 
@@ -59,6 +64,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/gtkpod/*.la
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/gtkpod/doc
 
 # no -devel
 %{__rm} -r $RPM_BUILD_ROOT%{_includedir}
@@ -71,12 +77,13 @@ rm -rf $RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT
 
 %post
+/sbin/ldconfig
 %update_icon_cache hicolor
 %glib_compile_schemas
 
 %postun
+/sbin/ldconfig
 %update_icon_cache hicolor
-%postun
 if [ "$1" = "0" ]; then
 	%glib_compile_schemas
 fi
@@ -89,6 +96,10 @@ fi
 %ghost %{_libdir}/libgtkpod.so.1
 %{_mandir}/man1/%{name}.1*
 %dir %{_datadir}/%{name}
+%{_datadir}/gtkpod/data
+%{_datadir}/gtkpod/icons
+%dir %{_datadir}/gtkpod/scripts/convert-2m4a.sh
+%attr(755,root,root) %{_datadir}/gtkpod/scripts/*
 %{_datadir}/glib-2.0/schemas/org.gtkpod.gschema.xml
 %{_desktopdir}/%{name}.desktop
 %{_iconsdir}/hicolor/*/apps/%{name}.png
