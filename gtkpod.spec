@@ -1,15 +1,16 @@
 # TODO
-# - Check for MP4 Headers: mp4v2/mp4v2.h: mp4v2-devel
+# - build system breaks autoconf cache: i.e PKGCONFIG and FAAD should not be set to custom values
 Summary:	Graphical song management program for Apple's iPod
 Summary(pl.UTF-8):	Graficzny menadżer utworów muzycznych dla urządzeń Apple iPod
 Name:		gtkpod
 Version:	2.1.0
-Release:	3
+Release:	4
 License:	GPL/LGPL
 Group:		X11/Applications/Multimedia
 Source0:	http://downloads.sourceforge.net/gtkpod/%{name}-%{version}.tar.gz
 # Source0-md5:	8e01f7cf2db1a421140eab561aee26d7
-Patch1:		desktop.patch
+Patch0:		desktop.patch
+Patch1:		itmf_tags.patch
 URL:		http://www.gtkpod.org/
 BuildRequires:	flex
 BuildRequires:	gdl-devel >= 3.0.0
@@ -23,6 +24,7 @@ BuildRequires:	libgnomecanvas-devel
 BuildRequires:	libgpod-devel >= 0.4.0
 BuildRequires:	libid3tag-devel >= 0.15
 BuildRequires:	libxml2-devel >= 2.7.7
+BuildRequires:	mp4v2-devel
 BuildRequires:	perl-XML-Parser
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-pythonprov
@@ -36,6 +38,9 @@ Requires:	mount
 Suggests:	faad2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+# clears PKGCONFIG, making cache reuse impossible
+%undefine	configure_cache
+
 %description
 Platform independent graphical song management program for Apple's
 iPod. It allows you to upload songs and playlists to your iPod.
@@ -46,10 +51,16 @@ urządzeń Apple iPod. Pozwala wgrywać pliki i listy utworów do iPoda.
 
 %prep
 %setup -q
+%patch0 -p1
 %patch1 -p1
 %{__sed} -i -e 's!/usr/bin/awk!/bin/awk!g' scripts/ldif2vcf.sh
 
 %build
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure \
 	FAAD=yes \
 	--disable-static
