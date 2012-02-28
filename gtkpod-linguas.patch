@@ -1,0 +1,24 @@
+diff -uNr gtkpod-2.1.1/configure.ac gtkpod-2.1.1.new/configure.ac
+--- gtkpod-2.1.1/configure.ac	2012-01-08 17:51:11.000000000 +0100
++++ gtkpod-2.1.1.new/configure.ac	2012-02-28 23:19:13.208521049 +0100
+@@ -129,7 +129,7 @@
+ 
+ 
+ dnl Add the languages which your application supports here.
+-ALL_LINGUAS="ca cs_CZ de es fr he it ja nl pt_BR ro ru sv zh_CN zh_TW"
++ALL_LINGUAS="ca cs de es fr he it ja nl pt_BR ro ru sv zh_CN zh_TW"
+ AM_GLIB_GNU_GETTEXT
+ 
+ 
+diff -uNr gtkpod-2.1.1/plugins/plugins.mk gtkpod-2.1.1.new/plugins/plugins.mk
+--- gtkpod-2.1.1/plugins/plugins.mk	2011-12-27 18:16:49.000000000 +0100
++++ gtkpod-2.1.1.new/plugins/plugins.mk	2012-02-28 23:19:28.905902725 +0100
+@@ -67,7 +67,7 @@
+ # List out the current language po files
+ PO_FILES=\
+ 					$(top_srcdir)/po/ca.po \
+-					$(top_srcdir)/po/cs_CZ.po \
++					$(top_srcdir)/po/cs.po \
+ 					$(top_srcdir)/po/de.po \
+ 					$(top_srcdir)/po/es.po \
+ 					$(top_srcdir)/po/fr.po \
