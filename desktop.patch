@@ -5,9 +5,9 @@ the pl comment should go to .po file really
 @@ -2,9 +2,11 @@
  _Name=gtkpod
  _GenericName=iPod Manager
- _Comment=Manage music and video on an Apple iPod
+ _Comment=Manage music, video and photos on an Apple iPod
 +# TODO: use add po/pl.po create pl.po-update.patch or sth, and submit it upstream
-+Comment[pl]=Graficzny menadżer utworów muzycznych dla urządzeń Apple iPod
++Comment[pl]=Graficzny menadżer utworów muzycznych, wideo i zdjęć dla urządzeń Apple iPod
  Exec=gtkpod
  Icon=gtkpod
  Terminal=false
