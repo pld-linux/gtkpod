@@ -3,33 +3,32 @@
 Summary:	Graphical song management program for Apple's iPod
 Summary(pl.UTF-8):	Graficzny menadżer utworów muzycznych dla urządzeń Apple iPod
 Name:		gtkpod
-Version:	2.1.3
-Release:	2
+Version:	2.1.4
+Release:	1
 License:	GPL/LGPL
 Group:		X11/Applications/Multimedia
 Source0:	http://downloads.sourceforge.net/gtkpod/%{name}-%{version}.tar.gz
-# Source0-md5:	57f04578de6e3262a436ec574422b144
+# Source0-md5:	66c12ccb529c0f7de9a48a7f0d277c80
 Patch0:		desktop.patch
 Patch1:		%{name}-linguas.patch
 Patch2:		automake-1.13.patch
-Patch3:		libanjuta-3.7.3.patch
-Patch4:		gdl362.patch
 URL:		http://www.gtkpod.org/
 BuildRequires:	autoconf >= 2.65
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	brasero-devel >= 3.0.0
-BuildRequires:	clutter-gtk-devel >= 1.0
+BuildRequires:	clutter-gtk-devel >= 1.2
 BuildRequires:	curl-devel >= 7.10.0
 BuildRequires:	flac-devel >= 1.2.1
 BuildRequires:	flex
 BuildRequires:	gdl-devel >= 3.0.0
 BuildRequires:	gettext-devel >= 0.11.0
-BuildRequires:	glib2-devel >= 1:2.28.5
+BuildRequires:	glib2-devel >= 1:2.32
 BuildRequires:	gstreamer0.10-plugins-base-devel >= 0.10.25
 BuildRequires:	gtk+3-devel >= 3.0.11
 BuildRequires:	gtk-webkit3-devel >= 1.3
 BuildRequires:	intltool >= 0.33
 BuildRequires:	libanjuta-devel >= 1:3.0.0
+BuildRequires:	libdiscid-devel
 BuildRequires:	libgpod-devel >= 0.7.0
 BuildRequires:	libid3tag-devel >= 0.15
 BuildRequires:	libmusicbrainz4-devel
@@ -65,8 +64,6 @@ urządzeń Apple iPod. Pozwala wgrywać pliki i listy utworów do iPoda.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
-%patch4 -p1
 %{__sed} -i -e 's!/usr/bin/awk!/bin/awk!g' scripts/ldif2vcf.sh
 %{__sed} -i -e '/^dist_profiles_DATA/s:=.*:=:' plugins/sjcd/data/Makefile.am
 mv -f po/cs{_CZ,}.po
