@@ -21,7 +21,7 @@ BuildRequires:	curl-devel >= 7.10.0
 BuildRequires:	flac-devel >= 1.2.1
 BuildRequires:	flex
 BuildRequires:	gdl-devel >= 3.0.0
-BuildRequires:	gettext-devel >= 0.11.0
+BuildRequires:	gettext-tools >= 0.11.0
 BuildRequires:	glib2-devel >= 1:2.32
 BuildRequires:	gstreamer0.10-plugins-base-devel >= 0.10.25
 BuildRequires:	gtk+3-devel >= 3.0.11
