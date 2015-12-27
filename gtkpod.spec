@@ -3,12 +3,12 @@
 Summary:	Graphical song management program for Apple's iPod
 Summary(pl.UTF-8):	Graficzny menadżer utworów muzycznych dla urządzeń Apple iPod
 Name:		gtkpod
-Version:	2.1.4
-Release:	2
+Version:	2.1.5
+Release:	1
 License:	GPL/LGPL
 Group:		X11/Applications/Multimedia
 Source0:	http://downloads.sourceforge.net/gtkpod/%{name}-%{version}.tar.gz
-# Source0-md5:	66c12ccb529c0f7de9a48a7f0d277c80
+# Source0-md5:	f011d6bc403f06d8bb13829c1c3d25fe
 Patch0:		desktop.patch
 Patch1:		%{name}-linguas.patch
 Patch2:		automake-1.13.patch
@@ -23,15 +23,16 @@ BuildRequires:	flex
 BuildRequires:	gdl-devel >= 3.0.0
 BuildRequires:	gettext-tools >= 0.11.0
 BuildRequires:	glib2-devel >= 1:2.32
-BuildRequires:	gstreamer0.10-plugins-base-devel >= 0.10.25
+BuildRequires:	gstreamer-plugins-base-devel >= 1.0
 BuildRequires:	gtk+3-devel >= 3.0.11
 BuildRequires:	gtk-webkit3-devel >= 1.3
 BuildRequires:	intltool >= 0.33
+BuildRequires:	iso-codes
 BuildRequires:	libanjuta-devel >= 1:3.0.0
-BuildRequires:	libdiscid-devel
+BuildRequires:	libdiscid-devel >= 0.2.2
 BuildRequires:	libgpod-devel >= 0.7.0
 BuildRequires:	libid3tag-devel >= 0.15
-BuildRequires:	libmusicbrainz4-devel
+BuildRequires:	libmusicbrainz5-devel >= 5.0.1
 BuildRequires:	libtool
 BuildRequires:	libvorbis-devel >= 1.3.1
 BuildRequires:	libxml2-devel >= 2.7.7
@@ -43,6 +44,9 @@ BuildRequires:	sed >= 4.0
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	hicolor-icon-theme
 Requires(post,postun):	/sbin/ldconfig
+Requires:	gstreamer-audio-formats > 1.0
+Requires:	gstreamer-flac > 1.0
+Requires:	gstreamer-vorbis > 1.0
 # M4A -> MP3 conversion support
 Requires:	mount
 Suggests:	faad2
