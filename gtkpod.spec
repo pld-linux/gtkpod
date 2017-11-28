@@ -4,7 +4,7 @@ Summary:	Graphical song management program for Apple's iPod
 Summary(pl.UTF-8):	Graficzny menadżer utworów muzycznych dla urządzeń Apple iPod
 Name:		gtkpod
 Version:	2.1.5
-Release:	1
+Release:	2
 License:	GPL/LGPL
 Group:		X11/Applications/Multimedia
 Source0:	http://downloads.sourceforge.net/gtkpod/%{name}-%{version}.tar.gz
