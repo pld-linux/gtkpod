@@ -70,6 +70,7 @@ urządzeń Apple iPod. Pozwala wgrywać pliki i listy utworów do iPoda.
 %patch2 -p1
 %{__sed} -i -e 's!/usr/bin/awk!/bin/awk!g' scripts/ldif2vcf.sh
 %{__sed} -i -e '/^dist_profiles_DATA/s:=.*:=:' plugins/sjcd/data/Makefile.am
+%{__sed} -i -e '1s,/usr/bin/python$,%{__python},' ./scripts/sync-palm-jppy.py
 mv -f po/cs{_CZ,}.po
 
 %build
