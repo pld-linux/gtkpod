@@ -79,6 +79,7 @@ mv -f po/cs{_CZ,}.po
 %{__autoconf}
 %{__autoheader}
 %{__automake}
+export CFLAGS="%{rpmcflags} -fcommon"
 %configure \
 	FAAD=yes \
 	--disable-static \
