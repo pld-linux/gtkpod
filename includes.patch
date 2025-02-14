@@ -1,0 +1,12 @@
+--- gtkpod-2.1.5/libgtkpod/misc.c.orig	2015-06-02 20:14:21.000000000 +0200
++++ gtkpod-2.1.5/libgtkpod/misc.c	2025-02-14 23:01:11.745471475 +0100
+@@ -48,6 +48,9 @@
+ #include "directories.h"
+ #include "gp_private.h"
+ 
++#include <libxml/parser.h>
++#include <libxml/xmlmemory.h>
++
+ #define DEBUG_MISC 0
+ 
+ /*------------------------------------------------------------------*\

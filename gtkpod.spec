@@ -12,6 +12,7 @@ Source0:	http://downloads.sourceforge.net/gtkpod/%{name}-%{version}.tar.gz
 Patch0:		desktop.patch
 Patch1:		%{name}-linguas.patch
 Patch2:		automake-1.13.patch
+Patch3:		includes.patch
 URL:		http://www.gtkpod.org/
 BuildRequires:	autoconf >= 2.65
 BuildRequires:	automake >= 1:1.9
@@ -68,6 +69,7 @@ urządzeń Apple iPod. Pozwala wgrywać pliki i listy utworów do iPoda.
 %patch -P0 -p1
 %patch -P1 -p1
 %patch -P2 -p1
+%patch -P3 -p1
 %{__sed} -i -e 's!/usr/bin/awk!/bin/awk!g' scripts/ldif2vcf.sh
 %{__sed} -i -e '/^dist_profiles_DATA/s:=.*:=:' plugins/sjcd/data/Makefile.am
 %{__sed} -i -e '1s,/usr/bin/python$,%{__python},' ./scripts/sync-palm-jppy.py
